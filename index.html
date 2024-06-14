@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="Data-Driven Neural Motion Planning">
+  <meta name="keywords" content="Neural Motion Planning, Sim2real, Procedural Scene Generation">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Neural MP</title>
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-FV4ZJ9PVSV"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-FV4ZJ9PVSV');
+  </script>
+
+  <script>
+    function updateSingleVideo() {
+      var demo = document.getElementById("single-menu-demos").value;
+      var task = document.getElementById("single-menu-tasks").value;
+      var inst = document.getElementById("single-menu-instances").value;
+
+      console.log("single", demo, task, inst)
+
+      var video = document.getElementById("multi-task-result-video");
+      video.src = "media/results/sim_rollouts/" + 
+                  "n" +
+                  demo +
+                  "-" +
+                  task +
+                  "-" +
+                  inst +
+                  ".mp4"
+      video.playbackRate = 1.75;
+      video.play();
+    }
+
+    function updateQpredVideo() {
+      var task = document.getElementById("single-menu-qpred").value;
+
+      console.log("qpred", task)
+
+      var video = document.getElementById("q-pred-video");
+      video.src = "media/results/qpred/" + 
+                  task + 
+                  ".mp4"
+      video.playbackRate = 1.75;
+      video.play();
+    }
+
+  </script>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+</head>
+<body onload="updateSingleVideo(); updateQpredVideo();">
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title">Data-Driven Neural Motion Planning</h1>
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <!-- PDF Link. -->
+              <span class="link-block">
+                <a target="_blank" href="resources/paper.pdf"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Paper</span>
+                </a>
+              </span>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="hero teaser">
+  <div class="container is-fullhd">
+    <div class="hero-body">
+      <div class="container">
+        <div class="columns is-vcentered  is-centered">
+            <div class="item item-steve"></div>
+          <video poster="" id="teaser" autoplay muted loop width="100%" style="border-radius:20px;">
+            <source src="resources/neural mp supp.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+          </br>
+        </div>
+        <br>
+        <h2 class="subtitle has-text-centered">
+        <span class="dperact">
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="hero is-light is-small">
+  <div class="hero-body">
+    <div class="container">
+      <div id="results-carousel" class="carousel results-carousel">
+        <div class="item item-steve">
+          <video poster="" id="steve" autoplay muted loop height="100%">
+            <source src="resources/bookcase.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-fullbody">
+          <video poster="" id="fullbody" autoplay muted loop height="100%">
+            <source src="resources/big_shelf.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-shiba">
+          <video poster="" id="shiba" autoplay muted loop height="100%">
+            <source src="resources/shelf_microwave.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-blueshirt">
+          <video poster="" id="blueshirt" autoplay muted loop height="100%">
+            <source src="resources/bins.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-shiba">
+          <video poster="" id="shiba" autoplay muted loop height="100%">
+            <source src="resources/cabinet.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+    <div class="container is-max-desktop">
+      <!-- Abstract. -->
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">Abstract</h2>
+          <div class="content has-text-justified">
+              <p>
+              The current paradigm for motion planning generates solutions from scratch for every new problem, which consumes time and compute resources. Inspired by the ability of humans to practice from diverse experiences and gradually increase proficiency from slow, unsure behavior to fast, dynamic motions while acquiring new skills, we seek to use data-driven learning. Collecting a diverse set of real world scenes with various objects, obstacles, and scene configurations to enable generalization is prohibitively expensive, especially for motion planning problems. Our approach builds a large number of complex scenes in simulation, where expert data is collected and then <em>distilled</em> into a reactive generalist policy. We build complex scenes by combining procedural, programmatic generation with models of everyday objects sampled from large 3D datasets. We then combine this with simple forward samplers and lightweight optimization to obtain a safe trajectory for real world deployment. We perform a thorough evaluation of our method on <b>64</b> motion planning tasks across <b>four</b> diverse environments with randomized poses, scenes and obstacles, in the real world, demonstrating an improvement of over <b>20%</b> over sampling-based and <b>80%</b> over state-of-the-art neural motion planning methods. All code, models and datasets will be released on acceptance.
+              </p>
+          </div>
+        </div>
+      </div>
+      <br>
+      <br>
+    </div>
+    <div class="container">
+      <div class="columns is-centered">
+        <div class="column is-full-width">
+          <h1 class="title is-2" style="text-align: center; padding-bottom: 10px;">Neural Motion Planner</h1>
+
+          <div class="columns is-centered has-text-centered">
+          <div class="column is-two-thirds ">
+          <div class="content has-text-justified">
+          </div>
+        </div>
+      </div>
+          <div class="columns is-centered">
+            <div class="column is-full" style="text-align: center;">
+              <img src="resources/method figure.png" alt="Image description" width="80%">
+              <br>
+              <br>
+              <div class="columns is-centered has-text-centered">
+                <div class="column is-two-thirds">
+                <div class="content has-text-justified interpolation-panel">
+                    <p style="text-align: center;font-size: 18px">We present Neural Motion Planners, which consists of 3 main components. <b>Left</b>: Large Scale data generation in simulation using expert planners <b>Middle</b>: Training deep network models to perform fast reactive motion planning <b>Right</b>: Test-time optimization at inference time to improve performance. </p>
+                </div>
+              </div>
+            </div>
+            <br>
+              
+            </div>
+          </div>
+         
+  </section>
+
+  <section class="section">
+    <div class="container">
+        <div class="columns is-centered">
+            <div class="column is-three-quarters">
+                <h3 class="title is-3" style="text-align: center; padding-bottom: 10px;"><strong>Neural MP solves motion planning tasks with complex unseen object configurations.</strong></h3>
+                <div class="columns">
+                    <div class="column">
+                        <video class="center" playsinline autoplay loop muted src="./resources/eval/bins.mp4" width="100%" style="border-radius:10px;"></video>
+                        <p style="text-align: center; font-size: 18px">Bins: 100%</p>
+                    </div>
+                    <div class="column">
+                        <video class="center" playsinline autoplay loop muted src="./resources/eval/shelf.mp4" width="100%" style="border-radius:10px;"></video>
+                        <p style="text-align: center; font-size: 18px">Shelf: 100%</p>
+                    </div>
+                    <div class="column">
+                        <video class="center" playsinline autoplay loop muted src="./resources/eval/articulated.mp4" width="100%" style="border-radius:10px;"></video>
+                        <p style="text-align: center; font-size: 18px">Articulated: 87.5%</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section">
+    <div class="container">
+        <div class="columns is-centered">
+            <div class="column is-three-quarters">
+                <h3 class="title is-3" style="text-align: center; padding-bottom: 10px;"><strong>Neural MP generalizes to out of distribution obstacles and in-hand objects</strong></h3>
+                <div class="columns">
+                  <div class="column">
+                      <video class="center" playsinline autoplay loop muted src="./resources/sword.mp4" width="100%" style="border-radius:10px;"></video>
+                      <p style="text-align: center; font-size: 18px">Minecraft Sword</p>
+                  </div>
+                  <div class="column">
+                      <video class="center" playsinline autoplay loop muted src="./resources/bookcase.mp4" width="100%" style="border-radius:10px;"></video>
+                      <p style="text-align: center; font-size: 18px">Bookcase</p>
+                  </div>
+                    <div class="column">
+                        <video class="center" playsinline autoplay loop muted src="./resources/gpu.mp4" width="100%" style="border-radius:10px;"></video>
+                        <p style="text-align: center; font-size: 18px">GPU</p>
+                  </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section class="section">
+    <div class="container">
+        <div class="columns is-centered">
+            <div class="column is-three-quarters">
+                <h3 class="title is-3" style="text-align: center; padding-bottom: 10px;"><strong>Neural MP can perform in-hand motion planning</strong></h3>
+                <div class="columns">
+                    <div class="column">
+                        <video class="center" playsinline autoplay loop muted src="./resources/joystick.mp4" width="100%" style="border-radius:10px;"></video>
+                        <p style="text-align: center; font-size: 18px">Joystick</p>
+                    </div>
+                    <div class="column">
+                        <video class="center" playsinline autoplay loop muted src="./resources/book.mp4" width="100%" style="border-radius:10px;"></video>
+                        <p style="text-align: center; font-size: 18px">Book</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section">
+    <div class="container">
+        <div class="columns is-centered">
+            <div class="column is-three-quarters">
+                <h3 class="title is-3" style="text-align: center; padding-bottom: 10px;"><strong>Failure Cases</strong></h3>
+                <div class="columns">
+                    <div class="column">
+                        <video class="center" playsinline autoplay loop muted src="./resources/bad_pcd.mp4" width="100%" style="border-radius:10px;"></video>
+                        <p style="text-align: center; font-size: 18px">Bad Pointclouds</p>
+                    </div>
+                    <div class="column">
+                        <video class="center" playsinline autoplay loop muted src="./resources/tight.mp4" width="100%" style="border-radius:10px;"></video>
+                        <p style="text-align: center; font-size: 18px">Extremely tight spaces</p>
+                    </div>
+                    <div class="column">
+                        <video class="center" playsinline autoplay loop muted src="./resources/ood.mp4" width="100%" style="border-radius:10px;"></video>
+                        <p style="text-align: center; font-size: 18px">Out of Distribution Objects</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+</body>
+</html>
