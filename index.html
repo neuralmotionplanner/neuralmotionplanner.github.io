@@ -105,10 +105,10 @@
       <div class="container">
         <div class="columns is-vcentered  is-centered">
             <div class="item item-steve"></div>
-          <video poster="" id="teaser" autoplay muted loop width="100%" style="border-radius:20px;">
-            <source src="resources/neural mp supp.mp4"
+            <video id="teaser" muted="" playsinline="" controls="" autoplay="" loop="" width="100%">
+              <source src="resources/neural mp supp.mp4"
                     type="video/mp4">
-          </video>
+            </video>
         </div>
           </br>
         </div>
@@ -209,7 +209,7 @@
   <section class="section">
     <div class="container">
         <div class="columns is-centered">
-            <div class="column is-three-quarters">
+          <div class="column is-full-width">
                 <h3 class="title is-3" style="text-align: center; padding-bottom: 10px;"><strong>Neural MP solves motion planning tasks with complex unseen object configurations.</strong></h3>
                 <div class="columns">
                     <div class="column">
@@ -239,7 +239,7 @@
 <section class="section">
     <div class="container">
         <div class="columns is-centered">
-            <div class="column is-three-quarters">
+          <div class="column is-full-width">
                 <h3 class="title is-3" style="text-align: center; padding-bottom: 10px;"><strong>Neural MP generalizes to out of distribution obstacles and in-hand objects</strong></h3>
                 <div class="columns">
                   <div class="column">
@@ -247,14 +247,31 @@
                       <p style="text-align: center; font-size: 18px">Minecraft Sword</p>
                   </div>
                   <div class="column">
-                      <video class="center" playsinline autoplay loop muted src="./resources/bookcase.mp4" width="100%" style="border-radius:10px;"></video>
-                      <p style="text-align: center; font-size: 18px">Bookcase</p>
-                  </div>
-                    <div class="column">
-                        <video class="center" playsinline autoplay loop muted src="./resources/gpu.mp4" width="100%" style="border-radius:10px;"></video>
-                        <p style="text-align: center; font-size: 18px">GPU</p>
+                      <video class="center" playsinline autoplay loop muted src="./resources/gallery_compressed/bookcase 1.mp4" width="100%" style="border-radius:10px;"></video>
+                      <p style="text-align: center; font-size: 18px">Shelf to Bookcase</p>
                   </div>
                 </div>
+                <div class="columns">
+                  <div class="column">
+                    <video class="center" playsinline autoplay loop muted src="./resources/gallery_compressed/bookcase 2.mp4" width="100%" style="border-radius:10px;"></video>
+                    <p style="text-align: center; font-size: 18px">Bookcase from Side</p>
+                </div>
+                    <div class="column">
+                        <video class="center" playsinline autoplay loop muted src="./resources/gpu.mp4" width="100%" style="border-radius:10px;"></video>
+                        <p style="text-align: center; font-size: 18px">GPU into Cabinet Drawer</p>
+                  </div>
+                </div>
+                <div class="columns">
+                  <div class="column">
+                    <video class="center" playsinline autoplay loop muted src="./resources/gallery_compressed/big shelf 2.mp4" width="100%" style="border-radius:10px;"></video>
+                    <p style="text-align: center; font-size: 18px">Long Pasta in Microwave</p>
+                </div>
+                    <div class="column">
+                        <video class="center" playsinline autoplay loop muted src="./resources/gallery_compressed/bookcase 3.mp4" width="100%" style="border-radius:10px;"></video>
+                        <p style="text-align: center; font-size: 18px">Bookcase from Behind</p>
+                  </div>
+                </div>
+                
             </div>
         </div>
     </div>
@@ -264,21 +281,29 @@
 <section class="section">
     <div class="container">
         <div class="columns is-centered">
-            <div class="column is-three-quarters">
+          <div class="column is-full-width">
                 <h3 class="title is-3" style="text-align: center; padding-bottom: 10px;"><strong>Failure Cases</strong></h3>
                 <div class="columns">
                     <div class="column">
+                      <h2 class="subtitle">
+                        Sometimes the pointcloud of the object is can have noise and holes, especially along edges. As a result, in this the top rung of the shelf
+                        is not incorporated in the pointcloud, resulting in the policy colliding with the top rung. &#10;&#13;
+                      </h2>
                         <video class="center" playsinline autoplay loop muted src="./resources/failure cases/bad pcd.mp4" width="100%" style="border-radius:10px;"></video>
-                        <p style="text-align: center; font-size: 18px">Inaccurate Pointclouds</p>
+                        <!-- <p style="text-align: center; font-size: 18px">Inaccurate Pointclouds</p> -->
                     </div>
                     <div class="column">
+                      <h2 class="subtitle">
+                        Tight spaces can also cause issues for our policy. Starting the end-effector at 50% into the microwave 
+                        is not an issue. However, once we start the end-effector fully in the microwave, the policy fails to remove the hand without colliding 
+                        with the microwave and dragging it along.
+                      </h2>
                         <video class="center" playsinline autoplay loop muted src="./resources/failure cases/tight spaces.mp4" width="100%" style="border-radius:10px;"></video>
-                        <p style="text-align: center; font-size: 18px">Extremely tight spaces</p>
                     </div>
-                    <div class="column">
+                    <!-- <div class="column">
                         <video class="center" playsinline autoplay loop muted src="./resources/failure cases/OOD.mp4" width="100%" style="border-radius:10px;"></video>
                         <p style="text-align: center; font-size: 18px">Out of Distribution Objects</p>
-                    </div>
+                    </div> -->
                 </div>
             </div>
         </div>
