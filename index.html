@@ -105,11 +105,9 @@
       <div class="container">
         <div class="columns is-vcentered  is-centered">
             <div class="item item-steve"></div>
-            <video id="teaser" muted="" playsinline="" controls="" autoplay="" loop="" width="100%">
-              <source src="resources/neural mp supp.mp4"
-                    type="video/mp4">
-            </video>
-        </div>
+            <!-- <iframe width="1920" height="1080" src="https://www.youtube.com/embed/HoVoNd0a4G4?autoplay=1&mute=1&loop=1?controls=0" title="YouTube video player" frameborder="0" style="border: 1px solid #bbb; border-radius: 10px;" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" data-gtm-yt-inspected-6="true"></iframe> -->
+            <iframe width="1920" height="740" src="https://www.youtube.com/embed/HoVoNd0a4G4?autoplay=1&mute=1&loop=1" frameborder="0" allowfullscreen="allowfullscreen"></iframe>
+          </div>
           </br>
         </div>
         <br>
@@ -127,31 +125,31 @@
       <div id="results-carousel" class="carousel results-carousel">
         <div class="item item-steve">
           <video poster="" id="steve" autoplay muted loop height="100%">
-            <source src="resources/bookcase.mp4"
+            <source src="resources/bookcase compressed.mp4"
                     type="video/mp4">
           </video>
         </div>
         <div class="item item-fullbody">
           <video poster="" id="fullbody" autoplay muted loop height="100%">
-            <source src="resources/big_shelf.mp4"
+            <source src="resources/big_shelf compressed.mp4"
                     type="video/mp4">
           </video>
         </div>
         <div class="item item-shiba">
           <video poster="" id="shiba" autoplay muted loop height="100%">
-            <source src="resources/shelf_microwave.mp4"
+            <source src="resources/shelf_microwave compressed.mp4"
                     type="video/mp4">
           </video>
         </div>
         <div class="item item-blueshirt">
           <video poster="" id="blueshirt" autoplay muted loop height="100%">
-            <source src="resources/bins.mp4"
+            <source src="resources/bins compressed.mp4"
                     type="video/mp4">
           </video>
         </div>
         <div class="item item-shiba">
           <video poster="" id="shiba" autoplay muted loop height="100%">
-            <source src="resources/cabinet.mp4"
+            <source src="resources/cabinet compressed.mp4"
                     type="video/mp4">
           </video>
         </div>
@@ -188,7 +186,7 @@
         </div>
       </div>
           <div class="columns is-centered">
-            <div class="column is-full" style="text-align: center;">
+            <div class="column is-full-width" style="text-align: center;">
               <img src="resources/method figure.png" alt="Image description" width="80%">
               <br>
               <br>
@@ -213,21 +211,21 @@
                 <h3 class="title is-3" style="text-align: center; padding-bottom: 10px;"><strong>Neural MP solves motion planning tasks with complex unseen object configurations.</strong></h3>
                 <div class="columns">
                     <div class="column">
-                        <video class="center" playsinline autoplay loop muted src="./resources/eval/Eval Bins.mp4" width="100%" style="border-radius:10px;"></video>
+                        <video class="center" playsinline autoplay loop muted src="./resources/eval/Eval Bins compressed.mp4" width="100%" style="border-radius:10px;"></video>
                         <p style="text-align: center; font-size: 18px">Bins: 100%</p>
                     </div>
                     <div class="column">
-                        <video class="center" playsinline autoplay loop muted src="./resources/eval/Eval Shelf.mp4" width="100%" style="border-radius:10px;"></video>
+                        <video class="center" playsinline autoplay loop muted src="./resources/eval/Eval Shelf compressed.mp4" width="100%" style="border-radius:10px;"></video>
                         <p style="text-align: center; font-size: 18px">Shelf: 100%</p>
                     </div>
                 </div>
                 <div class="columns">
                   <div class="column">
-                    <video class="center" playsinline autoplay loop muted src="./resources/eval/Eval Cabinet.mp4" width="100%" style="border-radius:10px;"></video>
+                    <video class="center" playsinline autoplay loop muted src="./resources/eval/Eval Cabinet compressed.mp4" width="100%" style="border-radius:10px;"></video>
                     <p style="text-align: center; font-size: 18px">Articulated: 87.5%</p>
                 </div>
                 <div class="column">
-                  <video class="center" playsinline autoplay loop muted src="./resources/eval/Eval In Hand.mp4" width="100%" style="border-radius:10px;"></video>
+                  <video class="center" playsinline autoplay loop muted src="./resources/eval/Eval In Hand compressed.mp4" width="100%" style="border-radius:10px;"></video>
                   <p style="text-align: center; font-size: 18px">In Hand: 81.25%</p>
               </div>
               </div>
@@ -243,7 +241,7 @@
                 <h3 class="title is-3" style="text-align: center; padding-bottom: 10px;"><strong>Neural MP generalizes to out of distribution obstacles and in-hand objects</strong></h3>
                 <div class="columns">
                   <div class="column">
-                      <video class="center" playsinline autoplay loop muted src="./resources/sword.mp4" width="100%" style="border-radius:10px;"></video>
+                      <video class="center" playsinline autoplay loop muted src="./resources/sword compressed.mp4" width="100%" style="border-radius:10px;"></video>
                       <p style="text-align: center; font-size: 18px">Minecraft Sword</p>
                   </div>
                   <div class="column">
@@ -257,7 +255,7 @@
                     <p style="text-align: center; font-size: 18px">Bookcase from Side</p>
                 </div>
                     <div class="column">
-                        <video class="center" playsinline autoplay loop muted src="./resources/gpu.mp4" width="100%" style="border-radius:10px;"></video>
+                        <video class="center" playsinline autoplay loop muted src="./resources/gpu compressed.mp4" width="100%" style="border-radius:10px;"></video>
                         <p style="text-align: center; font-size: 18px">GPU into Cabinet Drawer</p>
                   </div>
                 </div>
@@ -289,8 +287,7 @@
                         Sometimes the pointcloud of the object is can have noise and holes, especially along edges. As a result, in this the top rung of the shelf
                         is not incorporated in the pointcloud, resulting in the policy colliding with the top rung. &#10;&#13;
                       </h2>
-                        <video class="center" playsinline autoplay loop muted src="./resources/failure cases/bad pcd.mp4" width="100%" style="border-radius:10px;"></video>
-                        <!-- <p style="text-align: center; font-size: 18px">Inaccurate Pointclouds</p> -->
+                        <video class="center" playsinline autoplay loop muted src="./resources/failure cases/bad pcd compressed.mp4" width="100%" style="border-radius:10px;"></video>
                     </div>
                     <div class="column">
                       <h2 class="subtitle">
@@ -298,12 +295,8 @@
                         is not an issue. However, once we start the end-effector fully in the microwave, the policy fails to remove the hand without colliding 
                         with the microwave and dragging it along.
                       </h2>
-                        <video class="center" playsinline autoplay loop muted src="./resources/failure cases/tight spaces.mp4" width="100%" style="border-radius:10px;"></video>
+                        <video class="center" playsinline autoplay loop muted src="./resources/failure cases/tight spaces compressed.mp4" width="100%" style="border-radius:10px;"></video>
                     </div>
-                    <!-- <div class="column">
-                        <video class="center" playsinline autoplay loop muted src="./resources/failure cases/OOD.mp4" width="100%" style="border-radius:10px;"></video>
-                        <p style="text-align: center; font-size: 18px">Out of Distribution Objects</p>
-                    </div> -->
                 </div>
             </div>
         </div>
